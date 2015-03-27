@@ -26,7 +26,7 @@ namespace oop1_figuer_s_hierarchy
 
         public void Circle_but_Click(object sender, EventArgs e)
         {
-            creator = new OvalCreator();
+            creator = new EllipseCreator();
             ptsmaxcount = 2;
             points.Clear();
         }
@@ -79,8 +79,8 @@ namespace oop1_figuer_s_hierarchy
                 case 0: return new Pen(Color.Red);
                 case 1: return new Pen(Color.Yellow);
                 case 2: return new Pen(Color.Green);
-                case 3: return new Pen(Color.Brown);
-                case 4: return new Pen(Color.Blue);
+                case 3: return new Pen(Color.Blue);
+                case 4: return new Pen(Color.Brown);
                 case 5: return new Pen(Color.Purple);
                 default: return new Pen(Color.Black);
             }
@@ -106,6 +106,22 @@ namespace oop1_figuer_s_hierarchy
         private void CompoboxPen_SelectedIndexChanged(object sender, EventArgs e)
         {
             pen = GetPen();
+        }
+
+        private void But_Circle_Click(object sender, EventArgs e)
+        {
+            creator = new CircleCreator();
+            ptsmaxcount = 2;
+            ptscount = 0;
+            points.Clear();
+        }
+
+        private void But_Square_Click(object sender, EventArgs e)
+        {
+            creator = new SquareCreator();
+            ptsmaxcount = 2;
+            ptscount = 0;
+            points.Clear();
         }
     }
 }

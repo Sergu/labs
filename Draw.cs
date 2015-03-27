@@ -52,6 +52,31 @@ namespace oop1_figuer_s_hierarchy
                     MessageBox.Show("Corners number should be more than 2");
                 }
             }
+            if (fig is Square)
+            {
+                Analysis(fig.points, out x, out y, out width, out height);
+                gr = fig.graphics;
+                if (width < height)
+                {
+                    height = width;
+                }
+                else
+                {
+                    width = height;
+                }
+                gr.DrawRectangle(fig.pen, x, y, width, height);
+            }
+            if (fig is Circle)
+            {
+                Analysis(fig.points, out x, out y, out width, out height);
+                gr = fig.graphics;
+                if (width < height)
+                    height = width;
+                else
+                    width = height;
+
+                gr.DrawEllipse(fig.pen, x, y, width, height);
+            }
         }
 
         private static void Analysis(List<Point> points,out int xmin,out int ymin,out int width,out int height)
